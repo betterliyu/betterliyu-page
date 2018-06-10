@@ -3,6 +3,7 @@ const path = require('path');
 // webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -12,7 +13,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       }
     ]
   },
@@ -25,6 +29,7 @@ module.exports = {
       hash: true,
       template: './src/index.html'
     }),
+    new ExtractTextPlugin('style.css')
   ],
   output: {
     filename: '[name].bundle.js',

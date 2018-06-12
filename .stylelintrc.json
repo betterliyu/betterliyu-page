@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "scss/selector-no-redundant-nesting-selector": true
+  }
+}

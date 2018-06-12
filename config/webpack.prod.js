@@ -10,7 +10,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, '../dist')
   },
   devtool: 'source-map',
@@ -23,7 +23,7 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "css/[name].[contenthash].css",
     }),
   ]
 });

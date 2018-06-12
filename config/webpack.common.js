@@ -62,14 +62,19 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.(png|svg|jpg|gif)$/,
-      use: [
-        "url-loader?limit=8192&name=images/[name].[contenthash].[ext]"
-      ]
+      loader: 'url-loader',
+      options: {
+        limit: 8192,
+        name: '[name].[hash].[ext]',
+        outputPath: 'images/'
+      }
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: [
-        "file-loader?name=font/[name].[contenthash].[ext]"
-      ]
+      loader: 'file-loader',
+      options: {
+        name: '[name].[hash].[ext]',
+        outputPath: 'fonts/'
+      }
     }]
   },
   plugins: [

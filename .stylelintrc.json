@@ -4,6 +4,7 @@
     "stylelint-order"
   ],
   "rules": {
-    "scss/selector-no-redundant-nesting-selector": true
+    "scss/selector-no-redundant-nesting-selector": true,
+    "color-hex-length": null
   }
 }

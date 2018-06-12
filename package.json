@@ -8,7 +8,7 @@
     "dev": "gulp dev",
     "prod": "cross-env NODE_ENV=production gulp prod",
     "deploy": "cross-env NODE_ENV=production gulp deploy",
-    "server": "webpack-dev-server --config config/webpack.dev.js"
+    "start": "webpack-dev-server --config config/webpack.dev.js"
   },
   "repository": {
     "type": "git",

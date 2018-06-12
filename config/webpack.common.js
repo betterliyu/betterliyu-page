@@ -13,7 +13,7 @@ console.log(process.env.NODE_ENV);
 module.exports = {
   entry: {
     polyfill: path.resolve(__dirname, '../src/polyfill.js'),
-    app: path.resolve(__dirname, '../src/index.js')
+    app: path.resolve(__dirname, '../src/app.js')
   },
   output: {
     filename: 'js/[name].bundle.js',

@@ -8,7 +8,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log(process.env.NODE_ENV);
 
 module.exports = {
   entry: {
@@ -86,12 +85,12 @@ module.exports = {
       template: './src/index.html',
       hash: true,
       chunks: ['polyfill', 'app'],
-      chunksSortMode: 'manual'
+      chunksSortMode: 'manual',
+      favicon: './favicon.ico'
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, '../CNAME'), to: '../dist' },
-      { from: path.resolve(__dirname, '../README.md'), to: '../dist' },
-      { from: path.resolve(__dirname, '../favicon.ico'), to: '../dist' }
+      { from: path.resolve(__dirname, '../README.md'), to: '../dist' }
     ]),
     new StyleLintPlugin({
       syntax: 'scss'

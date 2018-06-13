@@ -8,6 +8,9 @@ window.onload = function () {
 
 if (module.hot) {
   module.hot.accept('./scripts/index.js', function () {
-    console.log('Accepting the updated printMe module!');
+    console.log('Accepting the updated Index.js module!');
+  });
+  module.hot.accept('./main.scss', function () {
+    console.log('Accepting the updated Main.scss module!');
   });
 }

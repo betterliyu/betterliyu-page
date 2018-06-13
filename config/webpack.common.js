@@ -84,7 +84,7 @@ module.exports = {
       title: 'Home',
       template: './src/index.html',
       hash: true,
-      chunks: ['polyfill', 'app'],
+      chunks: ['polyfill', 'app', 'styles'], // styles: styles.css
       chunksSortMode: 'manual',
       favicon: './favicon.ico'
     }),

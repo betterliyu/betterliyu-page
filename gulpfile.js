@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const ghPages = require('gulp-gh-pages');
@@ -11,6 +12,14 @@ gulp.task('dev', function () {
     .pipe(webpackStream(developConfig, webpack))
     .pipe(gulp.dest('dist/'));
 });
+gulp.task('dev-server', ['dev'], function () {
+  browserSync.init({
+    server: {
+      baseDir: "./dist/"
+    },
+    open: false
+  });
+});
 
 gulp.task('prod', function () {
   return gulp.src('src/index.js')
@@ -19,6 +28,13 @@ gulp.task('prod', function () {
 });
 
 
+gulp.task('prod-server', ['prod'], function () {
+  browserSync.init({
+    server: {
+      baseDir: "./dist/"
+    }
+  });
+});
 
 gulp.task('deploy', ['prod'], function () {
   return gulp.src('./dist/**/*')

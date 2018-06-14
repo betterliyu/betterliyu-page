@@ -11,13 +11,14 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: 'js/[name].[contenthash].js',
+    chunkFilename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, '../dist')
   },
   devtool: 'source-map',
   plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
+    // new UglifyJSPlugin({
+    //   sourceMap: true
+    // }),
     new OptimizeCSSAssetsPlugin({}),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
@@ -25,17 +26,5 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash].css",
     }),
-  ],
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.s?css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-      }
-    }
-  },
+  ]
 });

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp dev",
+    "dev-server": "gulp dev-server",
     "prod": "cross-env NODE_ENV=production gulp prod",
+    "prod-server": "cross-env NODE_ENV=production gulp prod-server",
     "deploy": "cross-env NODE_ENV=production gulp deploy",
     "start": "webpack-dev-server --config config/webpack.dev.js"
   },
@@ -23,8 +25,11 @@
   "devDependencies": {
     "autoprefixer": "^8.6.2",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.6",
@@ -37,6 +42,7 @@
     "gulp-gh-pages": "^0.5.4",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
@@ -58,6 +64,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0"
   },
@@ -66,6 +73,7 @@
     "IE >= 10"
   ],
   "sideEffects": [
-    "*.scss"
+    "*.scss",
+    "*.css"
   ]
 }

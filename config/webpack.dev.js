@@ -5,6 +5,11 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
   mode: 'development',
+  output: {
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].js',
+    path: path.resolve(__dirname, '../dist')
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),

@@ -11,11 +11,14 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    polyfill: path.resolve(__dirname, '../src/polyfill.js'),
-    app: path.resolve(__dirname, '../src/app.js')
+    app: path.resolve(__dirname, '../src/app.js'),
+    "style.mobile": path.resolve(__dirname, '../src/meidaquery/style.mobile.js'),
+    "style.pad": path.resolve(__dirname, '../src/meidaquery/style.pad.js'),
+    "style.pc": path.resolve(__dirname, '../src/meidaquery/style.pc.js'),
   },
   output: {
-    filename: 'js/[name].bundle.js',
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist')
   },
   module: {
@@ -24,6 +27,8 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'eslint-loader',
+      options: {
+      }
     }, {
       test: /\.css$/,
       use: [{
@@ -58,7 +63,7 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      loader: 'babel-loader',
     }, {
       test: /\.(png|svg|jpg|gif)$/,
       loader: 'url-loader',
@@ -82,11 +87,17 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Home',
-      template: './src/index.html',
-      hash: true,
-      chunks: ['polyfill', 'app', 'styles'], // styles: styles.css
-      chunksSortMode: 'manual',
-      favicon: './favicon.ico'
+      template: './src/template.html',
+      // hash: true,
+      // // chunks: ['polyfill', 'app', 'vendors'],
+      // // chunksSortMode: 'manual',
+      // favicon: './favicon.ico'
+      inject: false,
+      mediaMapping: [
+        { type: 'mobile', query: 'screen and (max-width: 767px)' },
+        { type: 'pad', query: 'screen and (max-width: 767px) and (max-width: 1023px)' },
+        { type: 'pc', query: 'screen and (min-width: 1024px)' }
+      ]
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, '../CNAME'), to: '../dist' },
@@ -95,5 +106,37 @@ module.exports = {
     new StyleLintPlugin({
       syntax: 'scss'
     })
-  ]
+  ],
+  optimization: {
+    minimize: isProd, //是否进行代码压缩
+    splitChunks: {
+      chunks: "all",
+      // cacheGroups: {
+      //   default: {
+      //     minChunks: 2,
+      //     priority: -20,
+      //     reuseExistingChunk: true,
+      //   },
+      //   vendors: {
+      //     test: /[\\/]node_modules[\\/]/,
+      //     priority: -10
+      //   }
+      // },
+      // cacheGroups: {
+      //   app: {
+      //     name: 'app',
+      //     chunks: 'all',
+      //     minChunks: 2
+      //   },
+      //   vendors: {
+      //     chunks: 'initial',
+      //     name: 'vendors',
+      //     test: /[\\/]node_modules[\\/]/,
+      //   }
+      // }
+    },
+    // runtimeChunk: {
+    //   name: "runtime"
+    // }
+  }
 };

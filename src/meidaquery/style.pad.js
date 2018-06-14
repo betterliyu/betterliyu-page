@@ -1,0 +1,1 @@
+import './style.pad.scss';

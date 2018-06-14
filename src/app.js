@@ -1,8 +1,11 @@
 import './main.scss';
-
+import './polyfill.js';
 import Start from './scripts/index.js';
 
 window.onload = function () {  
+  import(/* webpackChunkName: "lodash" */ 'lodash').then(exports => {
+    exports.cloneDeep({});
+  });
   Start();
 };
 
@@ -12,5 +15,8 @@ if (module.hot) {
   });
   module.hot.accept('./main.scss', function () {
     console.log('Accepting the updated Main.scss module!');
+  });
+  module.hot.accept('./polyfill.js', function () {
+    console.log('Accepting the updated Polyfill.js module!');
   });
 }

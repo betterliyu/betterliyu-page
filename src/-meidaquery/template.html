@@ -4,6 +4,8 @@
 <!--[if IE 8 ]>    <html lang="en" class="ie8" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <!--<![endif]-->
+<%console.log(htmlWebpackPlugin) %>
+<%console.log(htmlWebpackPlugin.files.chunks) %>
 <head> 
   <meta charset="utf-8">
   <title><%= htmlWebpackPlugin.options.title || 'Welcome | 李雨的主页'%></title>
@@ -15,13 +17,13 @@
 
   <% for (var css in htmlWebpackPlugin.files.css) { %>
     <% if(htmlWebpackPlugin.files.css[css].indexOf('mobile') >= 0) { %>
-      <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" media="<%=map.mobile %>">
+      <link href="<%= htmlWebpackPlugin.files.css[css] %>" type="text/css" rel="stylesheet" media="<%=map.mobile %>">
     <% } else if(htmlWebpackPlugin.files.css[css].indexOf('pad') >= 0) { %>
-      <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" media="<%=map.pad %>">
+      <link href="<%= htmlWebpackPlugin.files.css[css] %>" type="text/css" rel="stylesheet" media="<%=map.pad %>">
     <% } else if(htmlWebpackPlugin.files.css[css].indexOf('pc') >= 0) { %>
-      <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" media="<%= map.pc %>">
+      <link href="<%= htmlWebpackPlugin.files.css[css] %>" type="text/css" rel="stylesheet" media="<%= map.pc %>">
     <% } else { %>
-      <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+      <link href="<%= htmlWebpackPlugin.files.css[css] %>" type="text/css" rel="stylesheet">
     <% } %>
   <% } %>
 </head>
@@ -191,7 +193,7 @@
         </main>
   </div>
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-  <% if (htmlWebpackPlugin.files.chunks[chunk].entry.indexOf("style.") === -1) { %>
+  <% if (htmlWebpackPlugin.options.mode !== 'production' || htmlWebpackPlugin.files.chunks[chunk].entry.indexOf("style.") === -1) { %>
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
   <% } %>
 <% } %>

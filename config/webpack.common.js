@@ -11,10 +11,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/app.js'),
-    "style.mobile": path.resolve(__dirname, '../src/meidaquery/style.mobile.js'),
-    "style.pad": path.resolve(__dirname, '../src/meidaquery/style.pad.js'),
-    "style.pc": path.resolve(__dirname, '../src/meidaquery/style.pc.js'),
+    app: path.resolve(__dirname, '../src/app.js')
   },
   output: {
     filename: 'js/[name].js',
@@ -87,17 +84,18 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Home',
-      template: './src/template.html',
-      // hash: true,
+      template: './src/index.html',
+      hash: true,
+      favicon: './favicon.ico'
       // // chunks: ['polyfill', 'app', 'vendors'],
-      // // chunksSortMode: 'manual',
-      // favicon: './favicon.ico'
-      inject: false,
-      mediaMapping: [
-        { type: 'mobile', query: 'screen and (max-width: 767px)' },
-        { type: 'pad', query: 'screen and (max-width: 767px) and (max-width: 1023px)' },
-        { type: 'pc', query: 'screen and (min-width: 1024px)' }
-      ]
+      // chunksSortMode: 'manual',
+      // inject: false,
+      // mediaMapping: [
+      //   { type: 'mobile', query: 'screen and (max-width: 767px)' },
+      //   { type: 'pad', query: 'screen and (min-width: 767px) and (max-width: 1023px)' },
+      //   { type: 'pc', query: 'screen and (min-width: 1024px)' }
+      // ],
+      // mode: process.env.NODE_ENV
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, '../CNAME'), to: '../dist' },

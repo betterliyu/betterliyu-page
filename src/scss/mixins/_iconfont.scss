@@ -1,0 +1,25 @@
+@mixin iconfont($content) {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &::before {
+    content: $content;
+  }
+}
+
+@mixin icon-email {
+  @include iconfont("\e608");
+}
+@mixin icon-location {
+  @include iconfont("\e74c");
+}
+@mixin icon-sharemale {
+  @include iconfont("\e61a");
+}
+@mixin icon-graduation-cap {
+  @include iconfont("\e6a8");
+}
+
+

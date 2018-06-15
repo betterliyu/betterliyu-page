@@ -1,0 +1,11 @@
+// tablets
+@media screen and (max-width: 1279px) {
+  @include base-md;
+  @include nav-md;
+}
+
+// mobile
+@media screen and (max-width: 767px) {
+  @include base-sm;  
+  @include nav-sm;  
+}

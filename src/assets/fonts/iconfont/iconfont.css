@@ -7,19 +7,3 @@
   url('iconfont.svg?t=1528867475684#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-youxiang:before { content: "\e608"; }
-
-.icon-location:before { content: "\e74c"; }
-
-.icon-sharemale:before { content: "\e61a"; }
-
-.icon-graduation-cap:before { content: "\e6a8"; }
-

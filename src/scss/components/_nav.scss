@@ -1,0 +1,16 @@
+.nav-sm {
+  @include border-x-1px(black);
+}
+
+
+
+
+
+// called in meida-queries
+@mixin nav-md {
+  
+}
+
+@mixin nav-sm {
+  
+}

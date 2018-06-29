@@ -1,0 +1,76 @@
+.m-about {
+  width: 90%;
+  max-width: $max-width-lg;
+  padding: 1.5rem 0;
+  .me {
+    display: flex;
+    line-height: 1.5;
+    margin-bottom: .8rem;
+    .title {
+      flex: 0 0 auto;
+      margin-top: 0;
+      padding-right: 30px;
+      letter-spacing: 2px;
+    }
+    .detail {
+      padding-left: .3rem;
+      border-left: 6px solid blue;
+      .desc {
+        margin-top: 0;
+      }
+      .info {
+        @include unstyled-list-x;
+        font-weight: lighter;
+        li {
+          margin-right: .5rem;
+        }
+        .male {
+          i {
+            @include icon-font('male');
+          }
+        }
+        .graduation {
+          i {
+            @include icon-font('graduation');
+          }
+        }
+        .location {
+          i {
+            @include icon-font('location');
+          }
+        }
+        .email {
+          i {
+            @include icon-font('email');
+          }
+          a {
+            @include clear-link($link-color);
+          }
+        }
+      }
+    }
+  }
+  .page {
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 1.5;
+    .title {
+      flex: 0 0 auto;
+      margin-top: 0;
+      padding-left: 30px;
+      letter-spacing: 2px;
+    }
+    .detail {
+      padding-right: .3rem;
+      border-right: 6px solid blue;
+      .desc {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// called in meida-queries
+@mixin about-md {}
+
+@mixin about-sm {}

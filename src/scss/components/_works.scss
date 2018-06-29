@@ -1,0 +1,10 @@
+.m-works {
+  width: 90%;
+  max-width: $max-width-lg;
+}
+  
+  
+// called in meida-queries
+@mixin works-md {}
+
+@mixin works-sm {}

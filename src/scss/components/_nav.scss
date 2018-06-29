@@ -1,16 +1,44 @@
-.nav-sm {
-  @include border-x-1px(black);
+.m-nav {
+  max-width: 1200px;
+  height: $header-height-lg;
+  margin: 0 auto;
+  text-align: center;
+  .u-logo {
+    float: left;
+  }
+  .u-nav {
+    display: inline-block;
+    transform: translate(0);
+    .list {
+      @include unstyled-list-x;
+      .item {
+        height: $header-height-lg;
+        line-height: $header-height-lg;
+        &::before {
+          content: '|';
+          display: inline-block;
+          color: white;
+          transform: scale(.35);
+        }
+        &:first-of-type::before {
+          display: none;
+        }
+        a {
+          display: inline-block;
+          height: 100%;
+          padding: 0 .4rem;
+          color: white;
+          box-sizing: border-box;
+          font-size: 14px;
+          letter-spacing: 1px;
+          @include clear-link(white);
+        }
+      }
+    }
+  }
 }
-
-
-
-
 
 // called in meida-queries
-@mixin nav-md {
-  
-}
+@mixin nav-md {}
 
-@mixin nav-sm {
-  
-}
+@mixin nav-sm {}

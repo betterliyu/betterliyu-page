@@ -1,0 +1,9 @@
+.m-skills {
+  width: 90%;
+  max-width: $max-width-lg;
+}  
+  
+// called in meida-queries
+@mixin skills-md {}
+
+@mixin skills-sm {}

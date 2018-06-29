@@ -1,0 +1,10 @@
+.m-footer {
+  width: 90%;
+  max-width: $max-width-lg;
+  margin: 0 auto;
+}  
+  
+// called in meida-queries
+@mixin footer-md {}
+
+@mixin footer-sm {}

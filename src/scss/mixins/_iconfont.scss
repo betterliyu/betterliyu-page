@@ -1,25 +1,39 @@
-@mixin iconfont($content) {
+@mixin icon-font($class) {
+  
   font-family:"iconfont" !important;
-  font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &::before {
-    content: $content;
+    content: getIconFont($class);
   }
 }
-
-@mixin icon-email {
-  @include iconfont("\e608");
+@function getIconFont($class) {
+  @if $class == "male" {
+    @return "\e61a";
+  } @else if $class == "graduation" {
+    @return "\e6a8";
+  } @else if $class == "location" {
+    @return "\e74c";
+  } @else if $class == "email" {
+    @return "\e608";
+  } @else if $class == "npm" {
+    @return "\e610";
+  } @else if $class == "css3" {
+    @return "\e653";
+  } @else if $class == "javascript" {
+    @return "\e90a";
+  } @else if $class == "angular" {
+    @return "\e606";
+  } @else if $class == "react" {
+    @return "\e64b";
+  } @else if $class == "github" {
+    @return "\eb04";
+  } @else if $class == "linkedin" {
+    @return "\e63c";
+  } @else if $class == "wechat" {
+    @return "\eb03";
+  } @else if $class == "email-color" {
+    @return "\e605";
+  }
 }
-@mixin icon-location {
-  @include iconfont("\e74c");
-}
-@mixin icon-sharemale {
-  @include iconfont("\e61a");
-}
-@mixin icon-graduation-cap {
-  @include iconfont("\e6a8");
-}
-
-

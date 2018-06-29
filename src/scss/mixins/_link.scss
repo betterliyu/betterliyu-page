@@ -1,0 +1,8 @@
+@mixin clear-link($color) {
+  color: $color;
+  text-decoration-line: none;
+  &:link, &:visited, &:hover, &:active, {
+    color: $color;
+    text-decoration-line: none;
+  }
+}

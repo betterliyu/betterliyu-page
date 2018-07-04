@@ -1,68 +1,65 @@
 .m-about {
-  width: 90%;
-  max-width: $max-width-lg;
-  padding: 1.5rem 0;
-  .me {
-    display: flex;
-    line-height: 1.5;
-    margin-bottom: .8rem;
-    .title {
-      flex: 0 0 auto;
-      margin-top: 0;
-      padding-right: 30px;
-      letter-spacing: 2px;
-    }
-    .detail {
-      padding-left: .3rem;
-      border-left: 6px solid blue;
-      .desc {
+  width: 100%;
+  padding: 1.2rem 0;
+  .container {
+    width: 90%;
+    max-width: $max-width-lg;
+    margin: 1rem auto 0;
+    .me,
+    .page {
+      display: flex;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      .title {
+        flex: 0 0 auto;
         margin-top: 0;
+        font-size: $font-size-h3;
+        letter-spacing: 2px;
       }
-      .info {
-        @include unstyled-list-x;
-        font-weight: lighter;
-        li {
-          margin-right: .5rem;
+      .line {
+        flex: 0 0 auto;
+        margin: 0 .3rem;
+        width: 6px;
+        background: $line-color;
+      }
+      .detail {
+        .desc {
+          margin-top: 0;
         }
-        .male {
-          i {
-            @include icon-font('male');
+        .info {
+          @include unstyled-list-x;
+          li {
+            margin-right: .5rem;
           }
-        }
-        .graduation {
-          i {
-            @include icon-font('graduation');
+          .male {
+            i {
+              @include icon-font('male');
+            }
           }
-        }
-        .location {
-          i {
-            @include icon-font('location');
+          .graduation {
+            i {
+              @include icon-font('graduation');
+            }
           }
-        }
-        .email {
-          i {
-            @include icon-font('email');
+          .location {
+            i {
+              @include icon-font('location');
+            }
           }
-          a {
-            @include clear-link($link-color);
+          .email {
+            i {
+              @include icon-font('email');
+            }
+            a {
+              @include clear-link($link-color);
+            }
           }
         }
       }
     }
-  }
-  .page {
-    display: flex;
-    flex-direction: row-reverse;
-    line-height: 1.5;
-    .title {
-      flex: 0 0 auto;
-      margin-top: 0;
-      padding-left: 30px;
-      letter-spacing: 2px;
-    }
-    .detail {
-      padding-right: .3rem;
-      border-right: 6px solid blue;
+    .page {
+      flex-direction: row-reverse;
+      margin-bottom: 0;
       .desc {
         margin: 0;
       }

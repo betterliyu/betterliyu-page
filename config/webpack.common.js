@@ -76,6 +76,9 @@ module.exports = {
         name: '[name].[hash].[ext]',
         outputPath: 'fonts/'
       }
+    }, {
+      test: /\.(html|htm)$/,
+      loader: 'html-loader',
     }]
   },
   plugins: [

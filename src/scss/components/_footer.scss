@@ -1,7 +1,13 @@
-.m-footer {
-  width: 90%;
-  max-width: $max-width-lg;
-  margin: 0 auto;
+.footer {
+  width: 100%;
+  padding: .2rem 0;
+  background: #EEE;
+  .container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: $max-width-lg;
+
+  }
 }  
   
 // called in meida-queries

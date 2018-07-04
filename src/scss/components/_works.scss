@@ -1,9 +1,25 @@
 .m-works {
-  width: 90%;
-  max-width: $max-width-lg;
+  width: 100%;
+  padding: 1.2rem 0;
+  background-color: #F9FAFC;
+  .container {
+    width: 90%;
+    max-width: $max-width-lg;
+    margin: 0 auto;
+    .title {
+      @include title-line;
+    }
+    .comment {
+      display: block;
+      margin: 2em 0;
+      text-align: center;
+      font-size: $font-size-small;
+      font-weight: 100;
+      font-style: italic;
+    }
+  }
 }
-  
-  
+
 // called in meida-queries
 @mixin works-md {}
 

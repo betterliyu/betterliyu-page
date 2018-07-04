@@ -1,4 +1,5 @@
 .m-nav {
+  position: relative;
   max-width: 1200px;
   height: $header-height-lg;
   margin: 0 auto;
@@ -8,10 +9,16 @@
   }
   .u-nav {
     display: inline-block;
+    position: absolute;
+    right: 50%;
     transform: translate(0);
     .list {
-      @include unstyled-list-x;
+      @include unstyled-list;
+      position: relative;
+      right: -50%;
+      white-space: nowrap;
       .item {
+        display: inline-block;
         height: $header-height-lg;
         line-height: $header-height-lg;
         &::before {
@@ -29,11 +36,22 @@
           padding: 0 .4rem;
           color: white;
           box-sizing: border-box;
-          font-size: 14px;
+          font-size: $font-size-h4;
           letter-spacing: 1px;
           @include clear-link(white);
         }
       }
+    }
+  }
+}
+
+.fixed .m-nav {
+  .u-nav {
+    right: 0;
+    transition: right .3s;
+    .list {
+      right: 0;
+      transition: right .3s;
     }
   }
 }

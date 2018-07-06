@@ -1,11 +1,15 @@
 .m-nav {
   position: relative;
   max-width: 1200px;
-  height: $header-height-lg;
+  height: $header-height;
   margin: 0 auto;
   text-align: center;
   .u-logo {
+    display: none;
     float: left;
+    img {
+      height: $header-height;
+    }
   }
   .u-nav {
     display: inline-block;
@@ -19,15 +23,15 @@
       white-space: nowrap;
       .item {
         display: inline-block;
-        height: $header-height-lg;
-        line-height: $header-height-lg;
-        &::before {
+        height: $header-height;
+        line-height: $header-height;
+        &::after {
           content: '|';
           display: inline-block;
           color: white;
           transform: scale(.35);
         }
-        &:first-of-type::before {
+        &:last-of-type::after {
           display: none;
         }
         a {
@@ -46,17 +50,54 @@
 }
 
 .fixed .m-nav {
+  .u-logo {
+    display: block;
+  }
   .u-nav {
     right: 0;
-    transition: right .3s;
     .list {
-      right: 0;
-      transition: right .3s;
+      right: 0%;
     }
   }
 }
 
 // called in meida-queries
-@mixin nav-md {}
+@mixin nav-md {
+  .fixed .m-nav {
+    .u-logo {
+      display: none;
+    }
+    .u-nav {
+      right: 50%;
+      .list {
+        right: -50%;
+      }
+    }
+  }
+}
 
-@mixin nav-sm {}
+@mixin nav-sm {
+  .m-nav {
+    width: 90%;
+    .u-logo {
+      display: block;
+    }
+    .u-nav {
+      right: 0%;
+      .list {
+        right: 0%;
+        .item {
+          a {
+            padding: 0 .1rem;
+          }
+          &::after {
+            display: none;
+          }
+        }
+        .item.f-lg {
+          display: none;
+        }
+      }
+    }
+  }
+}

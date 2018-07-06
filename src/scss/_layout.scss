@@ -1,9 +1,9 @@
 .header {
   position: absolute;
-  top: calc(80vh - #{$header-height-lg});
+  top: calc(80vh - #{$header-height});
   z-index: 100;
   width: 100%;
-  height: $header-height-lg;
+  height: $header-height;
   background-color: $hero-bg-color;
 }
 
@@ -27,16 +27,15 @@
   background: white;
 }
 
-
 // called in meida-queries
 @mixin layout-md {
   .header {
-    position: fixed;
-    top: 0;
-    height: $header-height;
   }
 }
 
 @mixin layout-sm {
-
+  .header {
+    position: fixed;
+    top: 0;
+  }
 }

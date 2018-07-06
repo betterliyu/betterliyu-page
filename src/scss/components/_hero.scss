@@ -4,7 +4,7 @@
   display: table;
   width: 100%;
   height: 80vh;
-  padding: .6rem 1.2rem 1.0rem;
+  padding: 0 1.2rem .4rem;
   box-sizing: border-box;
   background-color: $hero-bg-color;
   .u-hero-msg {
@@ -25,9 +25,26 @@
 
 // called in meida-queries
 @mixin hero-md {
-  .m-hero {
-    height: 50vh;
+  .g-hero {
+    padding: 0 .6rem .4rem;
+    .u-hero-msg {
+      font-size: 25px;
+    }
   }
 }
 
-@mixin hero-sm {}
+@mixin hero-sm {
+  .g-hero {
+    height: 50vh;
+    padding: 0 5%;
+    .u-hero-msg {
+      font-size: 25px;
+      &.f-lg {
+        display: none;
+      }
+      &.f-sm {
+        display: table-cell;
+      }
+    }
+  }
+}

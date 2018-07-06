@@ -1,6 +1,8 @@
 .footer {
+  $height: 32px;
+
   width: 100%;
-  padding: .2rem 0;
+  padding: .15rem 0;
   background: #EEE;
   .container {
     display: flex;
@@ -11,21 +13,21 @@
     .copyright {
       display: inline-block;
       width: 33%;
-      line-height: 32px;
+      line-height: $height;
       text-align: center;
       .u-logo {
         display: inline-block;
         width: 32px;
-        height: 32px;
+        height: $height;
         margin-right: 10px;
         vertical-align: bottom;
         img {
           width: 32px;
-          height: 32px;
+          height: $height;
         }
       }
       .text {
-        line-height: 32px;
+        line-height: $height;
       }
     }
     .contact {
@@ -36,8 +38,12 @@
         .item {
           display: inline-block;
           padding: 0 .5em;
-          line-height: 32px;
+          line-height: 0;
+          vertical-align: middle;
           i {
+            display: inline-block;
+            height: $height;
+            line-height: $height;
             cursor: pointer;
             font-size: 18px;
           }
@@ -68,7 +74,7 @@
         .item {
           display: inline-block;
           padding: 0 .5em;
-          line-height: 32px;
+          line-height: $height;
           a {
             @include clear-link($link-color);
           }

@@ -2,6 +2,7 @@
 @media screen and (max-width: 1279px) {
   @include base-md;
   @include layout-md;
+  @include hero-md;
   @include nav-md;
 }
 
@@ -9,5 +10,6 @@
 @media screen and (max-width: 767px) {
   @include base-sm;
   @include layout-sm;  
+  @include hero-sm;
   @include nav-sm;  
 }

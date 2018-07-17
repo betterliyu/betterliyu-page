@@ -45,12 +45,11 @@
 
 html {
   font-size: 100px; // pc直接默认100px
-}
-
-body {
-  padding-top: 80vh;
-  font-size: $font-size-text; // 字体在每种设备上固定，不用rem
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, SegoeUI, 'Microsoft YaHei', 微软雅黑, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  body {
+    padding-top: $hero-height;
+    font-size: $font-size-text; // 字体在每种设备上固定，不用rem
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, SegoeUI, 'Microsoft YaHei', 微软雅黑, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 }
 
 // called in meida-queries
@@ -59,9 +58,9 @@ body {
   $design-rem: 100; // 设计稿对应尺寸下，1rem大小。  100方便计算，也方便理解
   html {
     font-size: ($design-rem / $design-width) * 100vw;
-  }
-  body {
-    font-size: $font-size-text;
+    body {
+      font-size: $font-size-text;
+    }
   }
 }
 
@@ -70,5 +69,9 @@ body {
   $design-rem: 100;
   html {
     font-size: ($design-rem / $design-width) * 100vw;
+    body {
+      padding-top: $hero-height-sm;
+      font-size: $font-size-text-sm;
+    }
   }
 }

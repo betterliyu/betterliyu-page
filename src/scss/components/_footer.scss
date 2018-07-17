@@ -1,14 +1,11 @@
 .footer {
   $height: 32px;
-
   width: 100%;
   padding: .15rem 0;
   background: #EEE;
   .container {
+    @include container-width-lg;
     display: flex;
-    width: 90%;
-    margin: 0 auto;
-    max-width: $max-width-lg;
     font-size: 14px;
     .copyright {
       display: inline-block;

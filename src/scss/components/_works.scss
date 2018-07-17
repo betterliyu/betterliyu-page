@@ -3,9 +3,7 @@
   padding: 1.2rem 0;
   background-color: #F9FAFC;
   .container {
-    width: 90%;
-    max-width: $max-width-lg;
-    margin: 0 auto;
+    @include container-width-lg;
     .title {
       @include title-line;
     }

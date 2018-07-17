@@ -1,10 +1,8 @@
 .m-about {
   width: 100%;
-  padding: 1.2rem 0;
+  padding: 2.2rem 0 1.2rem;
   .container {
-    width: 90%;
-    max-width: $max-width-lg;
-    margin: 1rem auto 0;
+    @include container-width-lg;
     .me,
     .page {
       display: flex;
@@ -70,4 +68,35 @@
 // called in meida-queries
 @mixin about-md {}
 
-@mixin about-sm {}
+@mixin about-sm {
+  .m-about {
+    padding: .5rem 0;
+    .container {
+      .me,
+      .page {
+        margin-bottom: .70rem;
+        .title {
+          display: none;
+        }
+        .line {
+          display: none;
+        }
+        .detail {
+          .desc {
+            font-weight: 100;
+            .start {
+              display: inline-block;
+              padding: 0 4px; 
+              line-height: 1.2;
+              border-left: 5px solid $line-color;
+              font-size: 22px;
+            }
+          }
+          .info {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

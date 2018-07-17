@@ -1,48 +1,51 @@
 .m-nav {
-  position: relative;
-  max-width: 1200px;
-  height: $header-height;
-  margin: 0 auto;
-  text-align: center;
-  .u-logo {
-    display: none;
-    float: left;
-    img {
-      height: $header-height;
-    }
-  }
-  .u-nav {
-    display: inline-block;
-    position: absolute;
-    right: 50%;
-    transform: translate(0);
-    .list {
-      @include unstyled-list;
-      position: relative;
-      right: -50%;
-      white-space: nowrap;
-      .item {
-        display: inline-block;
+  width: 100%;
+  .container {
+    @include container-width-lg;
+    position: relative;
+    height: $header-height;
+    text-align: center;
+    .u-logo {
+      display: none;
+      float: left;
+      font-size: 0;
+      img {
         height: $header-height;
-        line-height: $header-height;
-        &::after {
-          content: '|';
+      }
+    }
+    .u-nav {
+      display: inline-block;
+      position: absolute;
+      right: 50%;
+      transform: translate(0);
+      .list {
+        @include unstyled-list;
+        position: relative;
+        right: -50%;
+        white-space: nowrap;
+        .item {
           display: inline-block;
-          color: white;
-          transform: scale(.35);
-        }
-        &:last-of-type::after {
-          display: none;
-        }
-        a {
-          display: inline-block;
-          height: 100%;
-          padding: 0 .4rem;
-          color: white;
-          box-sizing: border-box;
-          font-size: $font-size-h4;
-          letter-spacing: 1px;
-          @include clear-link(white);
+          height: $header-height;
+          line-height: $header-height;
+          &::after {
+            content: '|';
+            display: inline-block;
+            color: white;
+            transform: scale(.35);
+          }
+          &:last-of-type::after {
+            display: none;
+          }
+          a {
+            display: inline-block;
+            height: 100%;
+            padding: 0 .4rem;
+            color: white;
+            box-sizing: border-box;
+            font-size: $font-size-h4;
+            letter-spacing: 1px;
+            @include clear-link(white);
+          }
         }
       }
     }
@@ -64,38 +67,42 @@
 // called in meida-queries
 @mixin nav-md {
   .fixed .m-nav {
-    .u-logo {
-      display: none;
-    }
-    .u-nav {
-      right: 50%;
-      .list {
-        right: -50%;
+    .container {
+      .u-logo {
+        display: none;
+      }
+      .u-nav {
+        right: 50%;
+        .list {
+          right: -50%;
+        }
       }
     }
   }
 }
 
 @mixin nav-sm {
-  .m-nav {
-    width: 90%;
-    .u-logo {
-      display: block;
-    }
-    .u-nav {
-      right: 0%;
-      .list {
+  .m-nav,
+  .fixed .m-nav {
+    .container {
+      .u-logo {
+        display: block;
+      }
+      .u-nav {
         right: 0%;
-        .item {
-          a {
-            padding: 0 .1rem;
+        .list {
+          right: 0%;
+          .item {
+            a {
+              padding: 0 .2rem;
+            }
+            &::after {
+              display: none;
+            }
           }
-          &::after {
+          .item.f-lg {
             display: none;
           }
-        }
-        .item.f-lg {
-          display: none;
         }
       }
     }

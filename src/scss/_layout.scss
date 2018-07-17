@@ -1,6 +1,6 @@
 .header {
   position: absolute;
-  top: calc(80vh - #{$header-height});
+  top: calc(#{$hero-height} - #{$header-height});
   z-index: 100;
   width: 100%;
   height: $header-height;
@@ -29,8 +29,6 @@
 
 // called in meida-queries
 @mixin layout-md {
-  .header {
-  }
 }
 
 @mixin layout-sm {

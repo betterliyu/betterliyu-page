@@ -4,6 +4,10 @@
   @include layout-md;
   @include hero-md;
   @include nav-md;
+  @include about-md;
+  @include works-md;
+  @include skills-md;
+  @include footer-md;
 }
 
 // mobile
@@ -12,4 +16,8 @@
   @include layout-sm;  
   @include hero-sm;
   @include nav-sm;  
+  @include about-sm;
+  @include works-sm;
+  @include skills-sm;
+  @include footer-sm;
 }

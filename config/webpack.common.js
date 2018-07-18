@@ -18,6 +18,11 @@ module.exports = {
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist')
   },
+  resolve: {
+    alias: {
+      jquery: '../node_modules/jquery/dist/jquery.js',
+    }
+  },
   module: {
     rules: [{
       enforce: 'pre',

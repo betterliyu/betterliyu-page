@@ -6,9 +6,10 @@
     height: $header-height;
     text-align: center;
     .u-logo {
-      display: none;
       float: left;
       font-size: 0;
+      opacity: 0;
+      transition: all .3s ease-in-out;
       img {
         height: $header-height;
       }
@@ -18,11 +19,13 @@
       position: absolute;
       right: 50%;
       transform: translate(0);
+      transition: all .3s ease-in-out;
       .list {
         @include unstyled-list;
         position: relative;
         right: -50%;
         white-space: nowrap;
+        transition: all .3s ease-in-out;
         .item {
           display: inline-block;
           height: $header-height;
@@ -54,7 +57,7 @@
 
 .fixed .m-nav {
   .u-logo {
-    display: block;
+    opacity: 1;
   }
   .u-nav {
     right: 0;
@@ -69,7 +72,7 @@
   .fixed .m-nav {
     .container {
       .u-logo {
-        display: none;
+        opacity: 0;
       }
       .u-nav {
         right: 50%;
@@ -86,7 +89,7 @@
   .fixed .m-nav {
     .container {
       .u-logo {
-        display: block;
+        opacity: 1;
       }
       .u-nav {
         right: 0%;

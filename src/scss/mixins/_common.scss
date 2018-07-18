@@ -1,7 +1,6 @@
-@mixin title-line() {
+@mixin title-line-gradient() {
   display: flex;
   font-size: $font-size-h2;
-  margin-bottom: .4rem;
   &::before,
   &::after {
     content: ' ';
@@ -10,10 +9,27 @@
     margin: #{$font-size-h2 - 6px} .2rem 0;
   }
   &::before {
-    background-image: linear-gradient(to right, white, $line-color 100%);
+    background: linear-gradient(to right, white, $line-color 100%);
   }
   &::after {
-    background-image: linear-gradient(to left, white, $line-color 100%);
+    background: linear-gradient(to left, white, $line-color 100%);
+  }
+  @include title-line-dpr-fix(1.5);
+  @include title-line-dpr-fix(2);
+  @include title-line-dpr-fix(2.5);
+  @include title-line-dpr-fix(3);
+}
+
+@mixin title-line() {
+  display: flex;
+  font-size: $font-size-h2;
+  &::before,
+  &::after {
+    content: ' ';
+    flex: 1 1 auto;
+    height: 1px;
+    margin: #{$font-size-h2 - 6px} .2rem 0;
+    background: $line-color;
   }
   @include title-line-dpr-fix(1.5);
   @include title-line-dpr-fix(2);

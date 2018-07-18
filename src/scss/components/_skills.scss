@@ -1,23 +1,88 @@
 .m-skills {
   width: 100%;
-  padding: 1.2rem 0;
+  padding: .8rem 0 .8rem;
   .container {
     @include container-width-lg;
     .title {
-      @include title-line;
+      @include title-line-gradient;
     }
     .comment {
       display: block;
-      margin: 2em 0;
+      margin: .4rem 0;
       text-align: center;
       font-size: $font-size-small;
       font-weight: 100;
-      font-style: italic;
+    }
+    .content {
+      .skill-list {
+        @include unstyled-list;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .skill {
+          width: 45%;
+          box-sizing: border-box;
+          padding: 10px 12px;
+          .percentage {
+            height: 10px;
+            margin: 10px 0 0;
+            background: #D2D2D2;
+          } // &:nth-child(odd) {
+          //   padding-right: 20px;
+          // }
+          // &:nth-child(even) {
+          //   padding-left: 20px;
+          // }
+        }
+      }
     }
   }
 }
 
 // called in meida-queries
-@mixin skills-md {}
+@mixin skills-md {
+  .m-skills {
+    padding: .6rem 0 .6rem;
+    .container {
+      .content {
+        .skill-list {
+          .skill {
+            width: 45%;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
 
-@mixin skills-sm {}
+@mixin skills-sm {
+  .m-skills {
+    padding: .4rem 0 .4rem;
+    .container {
+      .title {
+        @include title-line;
+        &::before {
+          margin-left: 0;
+          margin-right: 10px;
+        }
+        &::after {
+          margin-left: 10px;
+          margin-right: 0;
+        }
+      }
+      .comment {
+        margin: .25rem 0;
+      }
+      .content {
+        .skill-list {
+          justify-content: center;
+          .skill {
+            width: 100%;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ const developConfig = require('./config/webpack.dev.js');
 const productionConfig = require('./config/webpack.prod.js');
 
 gulp.task('dev', function () {
-  return gulp.src('src/index.js')
+  return gulp.src('src/app.js')
     .pipe(webpackStream(developConfig, webpack))
     .pipe(gulp.dest('dist/'));
 });
@@ -22,7 +22,7 @@ gulp.task('dev-server', ['dev'], function () {
 });
 
 gulp.task('prod', function () {
-  return gulp.src('src/index.js')
+  return gulp.src('src/app.js')
     .pipe(webpackStream(productionConfig, webpack))
     .pipe(gulp.dest('dist/'));
 });
@@ -41,6 +41,14 @@ gulp.task('deploy', ['prod'], function () {
     .pipe(ghPages({
       remoteUrl: 'https://github.com/betterliyu/betterliyu.github.io.git',
       branch: 'master'
+    }));
+});
+
+gulp.task('deploy2test', ['prod'], function () {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages({
+      remoteUrl: 'https://github.com/betterliyu/betterliyu-page.git',
+      branch: 'gh-pages'
     }));
 });
 

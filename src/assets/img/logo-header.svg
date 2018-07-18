@@ -3,10 +3,7 @@
 
  <g>
   <title>background</title>
-  <rect fill="#ffffff" id="canvas_background" height="66" width="66" y="-1" x="-1"/>
-  <g display="none" id="canvasGrid">
-   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_1"/>
-  </g>
+  <rect fill="#ffffff" fill-opacity="0" id="canvas_background" height="66" width="66" y="-1" x="-1"/>
  </g>
  <g>
   <title>Layer 1</title>

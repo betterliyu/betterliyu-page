@@ -10,6 +10,7 @@
     "prod": "cross-env NODE_ENV=production gulp prod",
     "prod-server": "cross-env NODE_ENV=production gulp prod-server",
     "deploy": "cross-env NODE_ENV=production gulp deploy",
+    "deploy2test": "cross-env NODE_ENV=production gulp deploy2test",
     "start": "webpack-dev-server --config config/webpack.dev.js"
   },
   "repository": {

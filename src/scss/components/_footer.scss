@@ -6,12 +6,11 @@
   .container {
     @include container-width-lg;
     display: flex;
+    justify-content: space-between;
     font-size: 14px;
     .copyright {
       display: inline-block;
-      width: 33%;
       line-height: $height;
-      text-align: center;
       .u-logo {
         display: inline-block;
         width: 32px;
@@ -24,13 +23,12 @@
         }
       }
       .text {
+        padding: 0 .5em;
         line-height: $height;
       }
     }
     .contact {
-      width: 33%;
       .list {
-        text-align: center;
         @include unstyled-list;
         .item {
           display: inline-block;
@@ -64,9 +62,7 @@
       }
     }
     .link {
-      width: 33%;
       .list {
-        text-align: center;
         @include unstyled-list;
         .item {
           display: inline-block;
@@ -84,4 +80,29 @@
 // called in meida-queries
 @mixin footer-md {}
 
-@mixin footer-sm {}
+@mixin footer-sm {
+  .footer {
+    padding: .2rem 0;
+    .container {
+      flex-direction: column;
+      .copyright {
+        order: 3;
+        width: 100%;
+        margin: .05rem 0;
+        .u-logo {
+          display: none;
+        }
+      }
+      .contact {
+        order: 1;
+        width: 100%;
+        margin: .05rem 0;
+      }
+      .link {
+        order: 2;
+        width: 100%;
+        margin: .05rem 0;
+      }
+    }
+  }
+}

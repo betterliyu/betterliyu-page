@@ -1,9 +1,11 @@
 .g-hero {
   position: fixed;
   top: 0;
+  z-index: -100;
   width: 100%;
   height: $hero-height;
   background-color: $hero-bg-color;
+  perspective: 500px;
   .container {
     @include container-width-lg;
     display: table;

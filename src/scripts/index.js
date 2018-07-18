@@ -1,14 +1,7 @@
-import { a } from './animation.js';
-
-a();
+import Scroll from './scroll.js';
 
 function init() {
-  resetFontSize();
+  Scroll.init();
 }
-
-function resetFontSize() {
-
-}
-
 
 export default init;

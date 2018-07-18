@@ -1,13 +1,13 @@
 .m-about {
   width: 100%;
-  padding: 2.2rem 0 1.2rem;
+  padding: 1.6rem 0 .8rem;
   .container {
     @include container-width-lg;
     .me,
     .page {
       display: flex;
       line-height: 1.7;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       .title {
         flex: 0 0 auto;
         margin-top: 0;
@@ -22,7 +22,7 @@
       }
       .detail {
         .desc {
-          margin-top: 0;
+          margin: 0;
         }
         .info {
           @include unstyled-list-x;
@@ -66,15 +66,24 @@
 }
 
 // called in meida-queries
-@mixin about-md {}
+@mixin about-md {
+  .m-about {
+    padding: 1.2rem 0 .6rem;
+    .container {
+      .me {
+        margin-bottom: .6rem;
+      }
+    }
+  }
+}
 
 @mixin about-sm {
   .m-about {
-    padding: .5rem 0;
+    padding: .8rem 0 .4rem;
     .container {
       .me,
       .page {
-        margin-bottom: .70rem;
+        margin-bottom: .4rem;
         .title {
           display: none;
         }
@@ -86,16 +95,20 @@
             font-weight: 100;
             .start {
               display: inline-block;
-              padding: 0 4px; 
-              line-height: 1.2;
-              border-left: 5px solid $line-color;
-              font-size: 22px;
+              width: 5px;
+              height: 18px;
+              margin-right: 4px;
+              vertical-align: text-bottom;
+              background: $line-color;
             }
           }
           .info {
             display: none;
           }
         }
+      }
+      .page {
+        margin-bottom: 0;
       }
     }
   }

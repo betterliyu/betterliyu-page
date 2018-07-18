@@ -1,4 +1,5 @@
-import './style.js';
+import './style.css';
+import './scss/main.scss';
 import './polyfill.js';
 import Start from './scripts/index.js';
 
@@ -13,7 +14,7 @@ if (module.hot) {
   module.hot.accept('./scripts/index.js', function () {
     console.log('Accepting the updated Index.js module!');
   });
-  module.hot.accept('./style.js', function () {
+  module.hot.accept('./style.css', function () {
     console.log('Accepting the updated Main.scss module!');
   });
   module.hot.accept('./polyfill.js', function () {

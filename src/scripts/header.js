@@ -1,34 +1,36 @@
 import $ from 'jquery';
 
-class Scroll {
-
+class Header {
   init() {
     $(window).scroll(() => {
-      this.headerScroll();
+      this.fixHeader();
+      this.scaleHero();
     });
 
     $(window).resize(() => {
-      this.headerScroll();
+      this.fixHeader();
+      this.scaleHero();
     });
   }
 
-  headerScroll() {
-    const $hero = $('#hero');
+  fixHeader() {
     const $header = $('#header');
     const $main = $('#main');
-
-    const heroHeight = $hero[0].getBoundingClientRect().height;
     const navHeight = $header[0].getBoundingClientRect().height;
     const mainTop = $main[0].getBoundingClientRect().top;
-
     if (mainTop < navHeight) {
       $header.addClass('fixed');
     } else {
       $header.removeClass('fixed');
     }
+  }
+
+  scaleHero() {
+    const $hero = $('#hero');
+    const heroHeight = $hero[0].getBoundingClientRect().height;
     var scale = (heroHeight - $(window).scrollTop() / 2) / heroHeight;
     $hero.children('.container').eq(0).css({ 'transform': 'scale(' + scale + ')' });
   }
 }
 
-export default new Scroll();
+export default new Header();

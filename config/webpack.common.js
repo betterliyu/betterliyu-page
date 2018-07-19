@@ -107,7 +107,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, '../CNAME'), to: '../dist' },
-      { from: path.resolve(__dirname, '../README.md'), to: '../dist' }
+      { from: path.resolve(__dirname, '../README.md'), to: '../dist' },
+      { from: path.resolve(__dirname, '../resume'), to: '../dist' },
+      { from: path.resolve(__dirname, '../db.json'), to: '../dist' }
     ]),
     new StyleLintPlugin({
       syntax: 'scss'

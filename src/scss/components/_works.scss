@@ -21,6 +21,12 @@
         width: 25%;
         padding: 10px 12px;
         box-sizing: border-box;
+        opacity: 0;
+        animation-fill-mode: both;
+        &.fadeInUp {
+          animation-name: fadeInUp;
+          animation-duration: 1s;
+        }
         .pic {
           display: block;
           overflow: hidden;

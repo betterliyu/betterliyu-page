@@ -13,12 +13,12 @@
       line-height: $height;
       .u-logo {
         display: inline-block;
-        width: 32px;
+        width: $height;
         height: $height;
         margin-right: 10px;
         vertical-align: bottom;
         img {
-          width: 32px;
+          width: $height;
           height: $height;
         }
       }
@@ -35,28 +35,9 @@
           padding: 0 .5em;
           line-height: 0;
           vertical-align: middle;
-          i {
-            display: inline-block;
-            height: $height;
-            line-height: $height;
+          img {
+            height: 22px;
             cursor: pointer;
-            font-size: 18px;
-          }
-          .github {
-            color: rgb(36, 41, 46);
-            @include icon-font('github');
-          }
-          .linkedin {
-            color: rgb(14, 118, 168);
-            @include icon-font('linkedin');
-          }
-          .wechat {
-            color: rgb(0, 210, 5);
-            @include icon-font('wechat');
-          }
-          .email {
-            color: rgb(18, 150, 219);
-            @include icon-font('email-color');
           }
         }
       }

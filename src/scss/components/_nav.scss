@@ -6,6 +6,7 @@
     height: $header-height;
     text-align: center;
     .u-logo {
+      display: none;
       float: left;
       font-size: 0;
       opacity: 0;
@@ -57,6 +58,7 @@
 
 .fixed .m-nav {
   .u-logo {
+    display: block;
     opacity: 1;
   }
   .u-nav {
@@ -89,6 +91,7 @@
   .fixed .m-nav {
     .container {
       .u-logo {
+        display: block;
         opacity: 1;
       }
       .u-nav {

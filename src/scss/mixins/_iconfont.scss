@@ -1,39 +1,24 @@
 @mixin icon-font($class) {
-  
-  font-family:"iconfont" !important;
-  font-style:normal;
+  font-family: "iconfont" !important;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &::before {
     content: getIconFont($class);
   }
 }
+
 @function getIconFont($class) {
-  @if $class == "male" {
+  @if $class=="male" {
     @return "\e61a";
-  } @else if $class == "graduation" {
+  }
+  @else if $class=="graduation" {
     @return "\e6a8";
-  } @else if $class == "location" {
+  }
+  @else if $class=="location" {
     @return "\e74c";
-  } @else if $class == "email" {
+  }
+  @else if $class=="email" {
     @return "\e608";
-  } @else if $class == "npm" {
-    @return "\e610";
-  } @else if $class == "css3" {
-    @return "\e653";
-  } @else if $class == "javascript" {
-    @return "\e90a";
-  } @else if $class == "angular" {
-    @return "\e606";
-  } @else if $class == "react" {
-    @return "\e64b";
-  } @else if $class == "github" {
-    @return "\eb04";
-  } @else if $class == "linkedin" {
-    @return "\e63c";
-  } @else if $class == "wechat" {
-    @return "\eb03";
-  } @else if $class == "email-color" {
-    @return "\e605";
   }
 }

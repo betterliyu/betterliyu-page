@@ -12,6 +12,10 @@
   top: 0;
 }
 
+.header.fixed-under-hero {
+  position: fixed;
+}
+
 .main {
   position: relative;
   z-index: 1;
@@ -28,8 +32,7 @@
 }
 
 // called in meida-queries
-@mixin layout-md {
-}
+@mixin layout-md {}
 
 @mixin layout-sm {
   .header {

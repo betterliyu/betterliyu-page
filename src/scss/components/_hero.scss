@@ -6,6 +6,9 @@
   height: $hero-height;
   background-color: $hero-bg-color;
   perspective: 500px;
+  &.hide {
+    display: none;
+  }
   .container {
     @include container-width-lg;
     display: table;

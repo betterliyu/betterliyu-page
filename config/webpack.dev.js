@@ -13,8 +13,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
-    hot: true,
-    host: '192.168.2.105'
+    hot: true
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

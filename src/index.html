@@ -55,7 +55,8 @@
             <div class="line"></div>
             <div class="detail">
               <p class="desc">
-                <span class="start"></span>我是一个前端开发工程师，有三年多的开发经验。我也做过后端开发，C#和数据库语言也都有所了解。 现在主要做JavaScript和CSS，以Web开发为主。我喜欢前端的东西，喜欢酷炫的CSS特效，喜欢所见即所得的成就感。如果你对我感兴趣，你可以浏览我的简历-
+                <span class="start"></span>
+                我是一个前端开发工程师，有三年多的开发经验。我也做过后端开发，C#和数据库语言也都有所了解。 现在主要做JavaScript和CSS，以Web开发为主。我喜欢前端的东西，喜欢酷炫的CSS特效，喜欢所见即所得的成就感。如果你对我感兴趣，你可以浏览我的简历-
                 <a>RESUME</a>，或者通过这些方式联系我。
               </p>
               <ul class="info">
@@ -84,7 +85,8 @@
             <div class="line"></div>
             <div class="detail">
               <p class="desc">
-                <span class="start"></span>主页是我自己设计开发的。自己用PhototShop做了个简单的原型，然后自己写结构、样式、动画。主页和我的个人笔记博客一起部署在Github Page上。源代码也在Github上。
+                <span class="start"></span>
+                主页是我自己设计开发的。自己用PhototShop做了个简单的原型，然后自己写结构、样式、动画。主页和我的个人笔记博客一起部署在Github Page上。源代码也在Github上。
               </p>
             </div>
           </article>
@@ -96,60 +98,46 @@
           <b class="comment">这些是我做过的一些项目,包括工作中的商业项目和个人写的一些Demo，有待更新。</b>
           <div class="content">
             <div class="c-work-item">
-              <dic class="pic">
-                <img src="/images/responsive/cadweb_320.png" srcset="/images/responsive/cadweb_320.png 320w, 
-                          /images/responsive/cadweb_480.png 480w, 
-                          /images/responsive/cadweb_640.png 640w, 
-                          /images/responsive/cadweb_960.png 960w, 
-                          /images/responsive/cadweb_1280.png 1280w,
-                          /images/responsive/cadweb_1440.png 1440w,
-                          /images/responsive/cadweb_1920.png 1920w" sizes="(max-width: 767px) 90vw,
-                         (min-width: 768px)and (max-width: 1279px) calc(45vw - 20px),
-                         (min-width: 1280px)and (max-width: 1600px) calc(40.5vw - 20px),
-                         340px" />
-              </dic>
+              <picture class="pic" id="cadwebPic">
+                <img sizes="(max-width: 767px) 90vw,
+                          (max-width: 1279px) calc(45vw - 20px),
+                          (max-width: 1599px) calc(22.5vw - 20px),
+                          340px" />
+              </picture>
               <div class="info">
                 <h3>SERIS-CAD</h3>
-                <p>Computer-aided disptch</p>
+                <img src="./assets/img/works/angular.svg">
+                <p>Computer-aided disptch system.</p>
               </div>
             </div>
             <div class="c-work-item">
-              <dic class="pic">
-                <img src="/images/responsive/ops_320.png" 
-                  srcset="/images/responsive/ops_320.png 320w, 
-                          /images/responsive/ops_480.png 480w, 
-                          /images/responsive/ops_640.png 640w, 
-                          /images/responsive/ops_960.png 960w, 
-                          /images/responsive/ops_1280.png 1280w,
-                          /images/responsive/ops_1440.png 1440w,
-                          /images/responsive/ops_1920.png 1920w" 
-                  sizes="(max-width: 767px) 90vw,
-                        (min-width: 768px)and (max-width: 1279px) calc(45vw - 20px),
-                        (min-width: 1280px)and (max-width: 1600px) calc(40.5vw - 20px),
-                        340px" />
-              </dic>
+              <picture class="pic" id="opsPic">
+                <img sizes="(max-width: 767px) 90vw,
+                          (max-width: 1279px) calc(45vw - 20px),
+                          (max-width: 1599px) calc(22.5vw - 20px),
+                          340px" />
+              </picture>
               <div class="info">
-                <h3>Microsoft OPS Portal</h3>
-                <p>Open Publish Service Portal</p>
+                <h3>
+                  <a href="https://ops.microsoft.com" target="_blank">Microsoft OPS Portal</a>
+                </h3>
+                <img src="./assets/img/works/react.svg">
+                <p>A modern content authoring and publish workflow based on Markdown and Git</p>
               </div>
             </div>
             <div class="c-work-item">
-              <dic class="pic">
-                <img src="/images/responsive/npm_320.png" 
-                  srcset="/images/responsive/npm_320.png 320w, 
-                          /images/responsive/npm_480.png 480w, 
-                          /images/responsive/npm_640.png 640w, 
-                          /images/responsive/npm_960.png 960w, 
-                          /images/responsive/npm_1280.png 1280w,
-                          /images/responsive/npm_1440.png 1440w,
-                          /images/responsive/npm_1920.png 1920w" 
-                  sizes="(max-width: 767px) 90vw,
-                        (min-width: 768px) and (max-width: 1279px) calc(45vw - 20px),
-                        (min-width: 1280px) and (max-width: 1599px) calc(40.5vw - 20px),
+              <picture class="pic" id="bwidgetPic">
+                <source type="image/svg+xml">
+                <img sizes="(max-width: 767px) 90vw,
+                        (max-width: 1279px) calc(45vw - 20px),
+                        (max-width: 1599px) calc(22.5vw - 20px),
                         340px" />
-              </dic>
+              </picture>
               <div class="info">
-                <h3>bwidget-timespinner</h3>
+                <h3>
+                  <a href="https://www.npmjs.com/package/bwidget-timespinner" target="_blank">bwidget-timespinner</a>
+                </h3>
+                <img src="./assets/img/works/social-javascript.svg">
                 <p>A javascript timespinner widget</p>
               </div>
             </div>
@@ -158,6 +146,7 @@
               </picture>
               <div class="info">
                 <h3>CSS Loading Demo</h3>
+                <img src="./assets/img/works/css3.svg">
                 <p>Some simple CSS loading demos</p>
               </div>
             </div>

@@ -83,9 +83,7 @@ module.exports = {
       }
     }, {
       test: /\.(html|htm)$/,
-      loader: 'html-loader',
-      options: {
-      }
+      loader: 'html-loader'
     }]
   },
   plugins: [
@@ -111,8 +109,7 @@ module.exports = {
       { from: path.resolve(__dirname, '../CNAME'), to: '../dist' },
       { from: path.resolve(__dirname, '../README.md'), to: '../dist' },
       { from: path.resolve(__dirname, '../resume'), to: '../dist' },
-      { from: path.resolve(__dirname, '../db.json'), to: '../dist' },
-      { from: path.resolve(__dirname, '../src/assets/img/works/'), to: '../dist/images/responsive' }
+      { from: path.resolve(__dirname, '../db.json'), to: '../dist' }
     ]),
     new StyleLintPlugin({
       syntax: 'scss'

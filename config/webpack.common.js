@@ -1,5 +1,6 @@
 const path = require('path');
 
+const webpack = require('webpack');
 // webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -31,6 +32,9 @@ module.exports = {
       loader: 'eslint-loader',
       options: {
       }
+    }, {
+      test: require.resolve("zepto"),
+      use: "imports-loader?this=>window"
     }, {
       test: /\.css$/,
       use: [{
@@ -67,7 +71,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader',
     }, {
-      test: /\.(png|svg|jpg|gif)$/,
+      test: /\.(png|svg|jpg|jpeg|gif)$/,
       loader: 'url-loader',
       options: {
         limit: 8192,

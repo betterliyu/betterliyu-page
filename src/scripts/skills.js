@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'zepto';
 
 class Skills {
   constructor() {
@@ -9,10 +9,10 @@ class Skills {
     this.createSkills(skills);
 
     this.handlerScroll();
-    $(window).scroll(() => {
+    $(window).on('scroll', () => {
       this.handlerScroll();
     });
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this.handlerScroll();
     });
   }

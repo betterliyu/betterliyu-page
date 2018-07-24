@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'zepto';
 import { trimEnd } from 'lodash';
 
 import { cadweb, ops, npm } from './reponsive-imgs.js';
@@ -13,10 +13,10 @@ class Works {
 
 
     this.handlerScroll();
-    $(window).scroll(() => {
+    $(window).on('scroll', () => {
       this.handlerScroll();
     });
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this.handlerScroll();
     });
   }

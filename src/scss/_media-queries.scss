@@ -8,6 +8,8 @@
   @include works-md;
   @include skills-md;
   @include footer-md;
+  @include overlay-md;
+  @include overlay-md
 }
 
 // mobile
@@ -20,4 +22,6 @@
   @include works-sm;
   @include skills-sm;
   @include footer-sm;
+  @include overlay-sm;
+  @include overlay-sm
 }

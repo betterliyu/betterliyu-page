@@ -23,31 +23,15 @@
       .detail {
         .desc {
           margin: 0;
+          a {
+            @include clear-link($link-color);
+          }
         }
         .info {
           @include unstyled-list-x;
-          li {
+          margin-top: 5px;
+          .item {
             margin-right: .5rem;
-          }
-          .male {
-            i {
-              @include icon-font('male');
-            }
-          }
-          .graduation {
-            i {
-              @include icon-font('graduation');
-            }
-          }
-          .location {
-            i {
-              @include icon-font('location');
-            }
-          }
-          .email {
-            i {
-              @include icon-font('email');
-            }
             a {
               @include clear-link($link-color);
             }

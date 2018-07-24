@@ -1,15 +1,15 @@
-import $ from 'jquery';
+import $ from 'zepto';
 
 class Header {
   init() {
     this.fixHeader();
     this.scaleHero();
-    $(window).scroll(() => {
+    $(window).on('scroll', () => {
       this.fixHeader();
       this.scaleHero();
     });
 
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this.fixHeader();
       this.scaleHero();
     });

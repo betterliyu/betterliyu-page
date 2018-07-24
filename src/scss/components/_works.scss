@@ -34,7 +34,7 @@
           padding-bottom: 56%;
           font-size: 0;
           background: #EEE url('../../assets/img/works/work_404.png') center center no-repeat;
-          background-size: cover;
+          background-size: 120px;
           img {
             position: absolute;
             width: 100%;
@@ -46,20 +46,23 @@
         }
         .info {
           position: relative;
-          h3 {
+          .name {
             margin-top: 10px;
             margin-bottom: 0;
-            a { 
-              @include clear-link(black);
+            .external-link {
+              @include clear-link($link-color);
+              .iconfont {
+                font-size: $font-size-h3;
+              }
             }
           }
-          img {
+          .tag {
             position: absolute;
             right: 4px;
             top: 0;
             height: 20px;
           }
-          p {
+          .desc {
             margin: 10px 0;
           }
         }

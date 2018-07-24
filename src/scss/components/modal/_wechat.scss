@@ -1,0 +1,32 @@
+.wechat-modal-content {
+  position: relative;
+  width: 400px;
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    color: #AAA;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .qr-code {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+// called in meida-queries
+@mixin overlay-md {
+  .wechat-modal-content {
+    width: 300px;
+  }
+}
+
+@mixin overlay-sm {
+  .wechat-modal-content {
+    width: 250px;
+  }
+}

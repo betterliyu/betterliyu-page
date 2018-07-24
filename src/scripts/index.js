@@ -1,17 +1,23 @@
-import $ from 'jquery';
+import $ from 'zepto';
 import Header from './header.js';
 import Skills from './skills.js';
 import Works from './works.js';
+import Footer from './Footer.js';
 
 function init() {
   Header.init();
   Works.init();
+  Footer.init();
   $.ajax({
     url: 'db.json',
     dataType: "json",
     jsonp: false,
-  }).then(data => {
-    Skills.init(data.skills);
+    success: data => {
+      Skills.init(data.skills);
+    },
+    error: () => {
+      Skills.init([]);
+    }
   });
 }
 

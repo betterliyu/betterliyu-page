@@ -46,6 +46,9 @@
 html {
   font-size: 100px; // pc直接默认100px
   body {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - #{$hero-height});
     padding-top: $hero-height;
     font-size: $font-size-text; // 字体在每种设备上固定，不用rem
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, SegoeUI, 'Microsoft YaHei', 微软雅黑, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -70,6 +73,7 @@ html {
   html {
     font-size: ($design-rem / $design-width) * 100vw;
     body {
+      min-height: calc(100vh - #{$hero-height-sm});
       padding-top: $hero-height-sm;
       font-size: $font-size-text-sm;
     }

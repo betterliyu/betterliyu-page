@@ -23,6 +23,7 @@
         }
       }
       .text {
+        display: inline-block;
         padding: 0 .5em;
         line-height: $height;
       }
@@ -35,9 +36,15 @@
           padding: 0 .5em;
           line-height: 0;
           vertical-align: middle;
-          img {
-            height: 22px;
-            cursor: pointer;
+          a {
+            display: inline-block;
+            line-height: $height;
+            img {
+              width: 22px;
+              height: $height;
+              vertical-align: middle;
+              cursor: pointer;
+            }
           }
         }
       }

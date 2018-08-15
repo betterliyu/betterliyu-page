@@ -1,0 +1,48 @@
+{
+  "name": "betterliyu-page",
+  "version": "1.0.0",
+  "dependencies": {
+    "babel-polyfill": {
+      "version": "6.26.0",
+      "from": "babel-polyfill@>=6.26.0 <7.0.0",
+      "resolved": "https://registry.npm.taobao.org/babel-polyfill/download/babel-polyfill-6.26.0.tgz"
+    },
+    "babel-runtime": {
+      "version": "6.26.0",
+      "from": "babel-runtime@>=6.26.0 <7.0.0",
+      "resolved": "https://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.26.0.tgz",
+      "dependencies": {
+        "regenerator-runtime": {
+          "version": "0.11.1",
+          "from": "regenerator-runtime@>=0.11.0 <0.12.0",
+          "resolved": "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz"
+        }
+      }
+    },
+    "core-js": {
+      "version": "2.5.7",
+      "from": "core-js@>=2.5.0 <3.0.0",
+      "resolved": "https://registry.npm.taobao.org/core-js/download/core-js-2.5.7.tgz"
+    },
+    "lodash": {
+      "version": "4.17.10",
+      "from": "lodash@>=4.17.10 <5.0.0",
+      "resolved": "https://registry.npm.taobao.org/lodash/download/lodash-4.17.10.tgz"
+    },
+    "normalize.css": {
+      "version": "8.0.0",
+      "from": "normalize.css@>=8.0.0 <9.0.0",
+      "resolved": "https://registry.npm.taobao.org/normalize.css/download/normalize.css-8.0.0.tgz"
+    },
+    "regenerator-runtime": {
+      "version": "0.10.5",
+      "from": "regenerator-runtime@>=0.10.5 <0.11.0",
+      "resolved": "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.10.5.tgz"
+    },
+    "zepto": {
+      "version": "1.2.0",
+      "from": "zepto@>=1.2.0 <2.0.0",
+      "resolved": "https://registry.npm.taobao.org/zepto/download/zepto-1.2.0.tgz"
+    }
+  }
+}

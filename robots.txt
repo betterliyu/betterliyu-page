@@ -1,0 +1,9 @@
+
+# robots.txt
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+# Sitemap: https://www.betterliyu.site/sitemap.xml

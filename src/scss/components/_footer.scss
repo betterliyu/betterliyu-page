@@ -26,6 +26,12 @@
         display: inline-block;
         padding: 0 .5em;
         line-height: $height;
+        &.powered {
+          font-size: 12px;
+        }
+        a {
+          @include clear-link($link-color);
+        }
       }
     }
     .contact {
@@ -49,19 +55,6 @@
         }
       }
     }
-    .link {
-      .list {
-        @include unstyled-list;
-        .item {
-          display: inline-block;
-          padding: 0 .5em;
-          line-height: $height;
-          a {
-            @include clear-link($link-color);
-          }
-        }
-      }
-    }
   }
 }
 
@@ -79,6 +72,9 @@
         margin: .05rem 0;
         .u-logo {
           display: none;
+        }
+        .text:first-of-type {
+          display: block;
         }
       }
       .contact {

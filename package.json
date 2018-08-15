@@ -10,6 +10,7 @@
     "prod": "cross-env NODE_ENV=production gulp prod",
     "prod-server": "cross-env NODE_ENV=production gulp prod-server",
     "deploy": "cross-env NODE_ENV=production gulp deploy",
+    "deploy-coding": "cross-env NODE_ENV=production gulp deploy_coding",
     "deploy2test": "cross-env NODE_ENV=production gulp deploy2test",
     "start": "webpack-dev-server --config config/webpack.dev.js"
   },
@@ -49,6 +50,7 @@
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
     "postcss-loader": "^2.1.5",
+    "raw-loader": "^0.5.1",
     "resolve-url-loader": "^2.3.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",

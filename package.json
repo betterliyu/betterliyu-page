@@ -12,7 +12,7 @@
     "deploy": "cross-env NODE_ENV=production gulp deploy",
     "deploy-coding": "cross-env NODE_ENV=production gulp deploy_coding",
     "deploy2test": "cross-env NODE_ENV=production gulp deploy2test",
-    "start": "webpack-dev-server --config config/webpack.dev.js"
+    "start": "cross-env DEPLOY_CODING=codingpages webpack-dev-server --config config/webpack.dev.js"
   },
   "repository": {
     "type": "git",

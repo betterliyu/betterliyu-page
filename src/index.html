@@ -26,7 +26,7 @@
       <div class="m-nav" id="navContainer">
         <div class="container">
           <a href="" class="u-logo">
-            <img src="./assets/img/logo-header.svg" alt="Li Yu">
+            <img src="<%=require('./assets/img/logo-header.svg') %>" alt="Li Yu">
           </a>
           <nav class="u-nav">
             <ul class="list">
@@ -107,7 +107,7 @@
               </picture>
               <div class="info">
                 <h3 class="name">SERIS-CAD</h3>
-                <img class="tag" src="./assets/img/works/angular.svg">
+                <img class="tag" src="<%=require('./assets/img/works/angular.svg')%>">
                 <p class="desc">Computer-aided disptch system.</p>
               </div>
             </div>
@@ -125,7 +125,7 @@
                     <i class="iconfont icon-link-external"></i>
                   </a>
                 </h3>
-                <img class="tag" src="./assets/img/works/react.svg">
+                <img class="tag" src="<%=require('./assets/img/works/react.svg')%>">
                 <p class="desc">
                   A modern content authoring and publish workflow based on Markdown and Git.
                 </p>
@@ -146,7 +146,7 @@
                     <i class="iconfont icon-link-external"></i>
                   </a>
                 </h3>
-                <img class="tag" src="./assets/img/works/social-javascript.svg">
+                <img class="tag" src="<%=require('./assets/img/works/social-javascript.svg')%>">
                 <p class="desc">A javascript timespinner widget.</p>
               </div>
             </div>
@@ -155,7 +155,7 @@
               </picture>
               <div class="info">
                 <h3 class="name">CSS Loading Demo</h3>
-                <img class="tag" src="./assets/img/works/css3.svg">
+                <img class="tag" src="<%=require('./assets/img/works/css3.svg')%>">
                 <p class="desc">Some simple CSS loading demos.</p>
               </div>
             </div>
@@ -177,32 +177,37 @@
       <div class="container">
         <div class="copyright">
           <a href="" class="u-logo">
-            <img src="./assets/img/logo-footer.svg" width="32" height="32" alt="Li Yu">
+            <img src="<%=require('./assets/img/logo-footer.svg')%>" width="32" height="32" alt="Li Yu">
           </a>
           <span class="text">© 2018 Li Yu</span>
           <span class="text powered">Powered by <a href="https://hexo.io" target="_blank" >Hexo</a></span>
-          <span class="text powered">Hosted by <a href="https://pages.github.com/" target="_blank" >Github Pages</a></span>
+          <% console.log(htmlWebpackPlugin.options) %>
+          <% if (htmlWebpackPlugin.options.deployToCodingPage) { %>
+            <span class="text powered">Hosted by <a href="https://coding.net/pages" target="_blank" >Coding Pages</a></span>
+          <% } else { %>
+            <span class="text powered">Hosted by <a href="https://pages.github.com/" target="_blank" >Github Pages</a></span>
+          <% } %>
         </div>
         <div class="contact">
           <ul class="list">
             <li class="item">
               <a href="https://github.com/betterliyu" target="_blank" title="betterliyu">
-                <img src="./assets/img/github.svg">
+                <img src="<%=require('./assets/img/github.svg')%>">
               </a>
             </li>
             <li class="item">
               <a href="http://www.linkedin.com/in/betterliyu" target="_blank" title="李雨">
-                <img src="./assets/img/linkedin.svg">
+                <img src="<%=require('./assets/img/linkedin.svg')%>">
               </a>
             </li>
             <li class="item">
               <a href="javascript:;" title="liyu3285" id="showWeChat">
-                <img src="./assets/img/wechat.svg">
+                <img src="<%=require('./assets/img/wechat.svg')%>">
               </a>
             </li>
             <li class="item">
               <a href="mailto:liyu@betterliyu.site" title="liyu@betterliyu.site">
-                <img src="./assets/img/email.svg">
+                <img src="<%=require('./assets/img/email.svg')%>">
               </a>
             </li>
           </ul>
@@ -213,7 +218,7 @@
       <div data-overlay id="wechatQRCcode">
         <div class="modal-content wechat-modal-content wechat">
           <i class="close iconfont icon-close" id="hideWeChat"></i>
-          <img class="qr-code" src="./assets/img/wechat-qr-code.jpeg" />
+          <img class="qr-code" src="<%=require('./assets/img/wechat-qr-code.jpeg')%>" />
         </div>
       </div>
     </aside>

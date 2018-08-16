@@ -86,9 +86,9 @@ module.exports = {
         name: '[name].[hash].[ext]',
         outputPath: 'fonts/'
       }
-    }, {
-      test: /\.(html|htm)$/,
-      loader: 'html-loader'
+    // }, {
+    //   test: /\.(html|htm)$/,
+    //   loader: 'html-loader'
     }]
   },
   plugins: [
@@ -97,7 +97,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Home',
-      template: deployToCodingPage ? './src/index-coding.html' : './src/index.html',
+      template: './src/index.html',
+      deployToCodingPage: deployToCodingPage,
       hash: true,
       favicon: './favicon.ico',
       // // chunks: ['polyfill', 'app', 'vendors'],

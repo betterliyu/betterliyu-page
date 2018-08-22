@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import Standalone from './scripts/standalone.js';
 import $ from 'zepto';
 
 $(function ($) {
@@ -16,6 +17,10 @@ $(function ($) {
     }
     lastTouchEnd = now;
   }, false);
+
+
+  // set ios desktop mode
+  // Standalone();
 
 
   // fuck ad uc browser add

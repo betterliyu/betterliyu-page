@@ -19,14 +19,12 @@
 }
 
 // called in meida-queries
-@mixin overlay-md {
-  .wechat-modal-content {
-    width: 300px;
-  }
+@mixin wechat-md {
 }
 
-@mixin overlay-sm {
+@mixin wechat-sm {
   .wechat-modal-content {
-    width: 250px;
+    width: 90%;
+    max-width: 400px;
   }
 }

@@ -8,3 +8,13 @@
     transform: none;
   }
 }
+
+/* fuck uc ad */
+
+iframe[id^="head__"] {
+  display: none !important;
+}
+
+iframe[id^="utp__"] {
+  display: none !important;
+}

@@ -13,6 +13,7 @@ const deployToCodingPage = process.env.DEPLOY_CODING === 'codingpages';
 
 module.exports = {
   entry: {
+    polyfill: path.resolve(__dirname, '../src/polyfill.js'),
     app: path.resolve(__dirname, '../src/app.js')
   },
   output: {

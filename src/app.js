@@ -1,6 +1,5 @@
 import './style.css';
 import './scss/main.scss';
-import './polyfill.js';
 import Start from './scripts/index.js';
 
 window.onload = function () {

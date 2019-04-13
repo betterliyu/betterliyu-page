@@ -5,15 +5,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config config/webpack.dev.js",
     "dev": "gulp dev",
-    "dev-server": "gulp dev-server",
     "prod": "gulp prod",
-    "prod-server": "gulp prod-server",
-    "deploy_github": "gulp deploy_github",
-    "deploy_coding": "gulp deploy_coding",
-    "deploy2test": "gulp deploy2test",
-    "start": "cross-env DEPLOY_CODING=codingpages webpack-dev-server --config config/webpack.dev.js",
-    "deploy": "gulp deploy_github && gulp deploy_coding"
+    "deploy": "gulp deploy-github && gulp deploy-coding"
   },
   "repository": {
     "type": "git",
@@ -41,7 +36,8 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-html": "^4.0.3",
     "file-loader": "^1.1.11",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
+    "gulp-env": "^0.4.0",
     "gulp-gh-pages-with-updated-gift": "^0.5.4",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

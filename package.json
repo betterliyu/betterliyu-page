@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --config config/webpack.dev.js",
     "dev": "gulp dev",
     "prod": "gulp prod",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy",
     "preview": "gulp deploy-preview"
   },
   "repository": {

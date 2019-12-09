@@ -17,9 +17,6 @@ gulp.task('server', done => {
   done();
 });
 
-gulp.task('mark-codingpage', done => { env.set({ DEPLOY_CODING: 'codingpages' }); done(); });
-
-gulp.task('clear-mark-codingpage', done => { env.set({ DEPLOY_CODING: null }); done(); });
 
 gulp.task('dev', () => {
   env.set({ NODE_ENV: 'development' });
@@ -39,17 +36,13 @@ gulp.task('dev-server', gulp.series('dev', 'server'));
 
 gulp.task('prod-server', gulp.series('prod', 'server'));
 
-gulp.task('deploy-coding', gulp.series('mark-codingpage', 'prod', () => {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages(deploy.codingPage));
-}));
 
-gulp.task('deploy-github', gulp.series('clear-mark-codingpage', 'prod', () => {
+gulp.task('deploy', gulp.series('prod', () => {
   return gulp.src('./dist/**/*')
     .pipe(ghPages(deploy.githubPage));
 }));
 
-gulp.task('deploy-preview', gulp.series('clear-mark-codingpage', 'prod', () => {
+gulp.task('deploy-preview', gulp.series('prod', () => {
   return gulp.src('./dist/**/*')
     .pipe(ghPages(deploy.previewPage));
 }));

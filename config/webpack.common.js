@@ -8,7 +8,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
-const deployToCodingPage = process.env.DEPLOY_CODING === 'codingpages';
 
 module.exports = {
   entry: {
@@ -99,7 +98,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Home',
       template: './src/index.html',
-      deployToCodingPage: deployToCodingPage,
       hash: true,
       favicon: './favicon.ico',
       // // chunks: ['polyfill', 'app', 'vendors'],

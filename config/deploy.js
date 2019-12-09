@@ -3,11 +3,6 @@ const githubPage = {
   branch: 'master'
 };
 
-const codingPage = {
-  remoteUrl: 'https://git.coding.net/betterliyu/betterliyu.coding.me.git',
-  branch: 'master'
-};
-
 const previewPage = {
   remoteUrl: 'https://github.com/betterliyu/betterliyu-page.git',
   branch: 'gh-pages'
@@ -15,6 +10,5 @@ const previewPage = {
 
 module.exports = {
   githubPage,
-  codingPage,
   previewPage
 };

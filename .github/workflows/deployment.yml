@@ -3,7 +3,7 @@ name: Deployment
 on:
   push:
     branches:
-      - release
+      - master
 
 jobs:
   build:
@@ -23,9 +23,17 @@ jobs:
     - name: Install yarn
       run: |
         npm install yarn -g
-    - name: Yarn install & deploy
+    - name: Build
+      run: |
+        yarn install
+        yarn prod
+    - name: Deploy
       run: |
         git config --global user.email "liyu@betterliyu.site"
         git config --global user.name "betterliyu" 
-        yarn install
-        yarn deploy
+        git clone https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.site.io publish
+        find ./publish/ | grep -v .git | grep -v CNAME  | xargs rm
+        find ./publish/ | ls 
+        cp -r /dist/. /publish
+        find ./publish/ | ls 
+        

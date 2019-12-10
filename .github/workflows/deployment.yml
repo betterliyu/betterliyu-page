@@ -39,7 +39,7 @@ jobs:
         git checkout -b master origin/master
         cd ..
         find ./publish/ | grep -v .git | xargs rm -rf
-        ls -a /publish
-        cp -r /dist/. /publish
-        ls -a /publish
+        ls -a ./publish
+        cp -r ./dist/. ./publish
+        ls -a ./publish
         

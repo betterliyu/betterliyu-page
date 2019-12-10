@@ -32,8 +32,10 @@ jobs:
         git config --global user.email "liyu@betterliyu.site"
         git config --global user.name "betterliyu" 
         git clone https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.site.io publish
-        find ./publish/ | grep -v .git | grep -v CNAME  | xargs rm
-        find ./publish/ | ls 
+        find ./publish/ | grep -v .git | grep -v CNAME  | xargs rm -r
+        cd ./publish/ | ls -a
+        cd .. 
         cp -r /dist/. /publish
-        find ./publish/ | ls 
+        cd ./publish/ | ls -a
+        cd .. 
         

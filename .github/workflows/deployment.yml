@@ -41,7 +41,7 @@ jobs:
         find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
         echo "Copy files from dist..." 
         cp -r ./dist/. ./publish
-        ls -a ./publish
+        cd ./publish
         git add .
         git commit -m "Site deployment"
         git push origin master -f

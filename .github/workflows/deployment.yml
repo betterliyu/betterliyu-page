@@ -37,9 +37,9 @@ jobs:
         git remote add origin https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git
         git fetch origin
         git checkout -b master origin/master
-        find . | grep -v .git | xargs rm -rf
-        ls -a
         cd ..
+        find ./publish/ | grep -v .git | xargs rm -rf
+        ls -a /publish
         cp -r /dist/. /publish
         ls -a /publish
         

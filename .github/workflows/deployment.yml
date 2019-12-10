@@ -39,10 +39,10 @@ jobs:
         git checkout -b master origin/master
         cd ..
         find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
-        echo "Copy files from dist..." 
+        echo "Copy dist to publish..." 
         cp -r ./dist/. ./publish
         cd ./publish
         git add .
-        git commit -m "Site deployment"
+        git commit -m "Deploy"
         git push origin master -f
         

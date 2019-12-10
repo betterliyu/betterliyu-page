@@ -38,9 +38,11 @@ jobs:
         git fetch origin
         git checkout -b master origin/master
         cd ..
-        ls -a .
         find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
-        ls -a .
+        echo "Copy files from dist..." 
         cp -r ./dist/. ./publish
         ls -a ./publish
+        git add .
+        git commit -m "Site deployment"
+        git push origin master -f
         

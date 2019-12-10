@@ -31,11 +31,13 @@ jobs:
       run: |
         git config --global user.email "liyu@betterliyu.site"
         git config --global user.name "betterliyu" 
-        git clone https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.site.io publish
-        find ./publish/ | grep -v .git | grep -v CNAME  | xargs rm -r
-        cd ./publish/ | ls -a
-        cd .. 
+        mkdir ./publish 
+        cd ./publish
+        git init 
+        git remote add origin https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git
+        find ./ | grep -v .git | grep -v CNAME  | xargs rm -r
+        ls 
+        cd ..
         cp -r /dist/. /publish
-        cd ./publish/ | ls -a
-        cd .. 
+        find ./publish/ | ls 
         

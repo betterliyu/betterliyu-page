@@ -35,9 +35,11 @@ jobs:
         cd ./publish
         git init 
         git remote add origin https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git
-        rm -rf !(.git|CNAME)
-        ls 
+        git fetch origin
+        git checkout -b master origin/master
+        find . | grep -v .git | xargs rm -rf
+        ls -a
         cd ..
         cp -r /dist/. /publish
-        find ./publish/ | ls 
+        ls -a /publish
         

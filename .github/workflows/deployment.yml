@@ -38,8 +38,9 @@ jobs:
         git fetch origin
         git checkout -b master origin/master
         cd ..
+        ls -a .
         find ./publish/ | grep -v .git | xargs rm -rf
-        ls -a ./publish
+        ls -a .
         cp -r ./dist/. ./publish
         ls -a ./publish
         

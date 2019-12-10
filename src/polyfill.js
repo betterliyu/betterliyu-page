@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import Standalone from './scripts/standalone.js';
+// import Standalone from './scripts/standalone.js';
 import $ from 'zepto';
 
 $(function ($) {

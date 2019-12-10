@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.13",
     "normalize.css": "^8.0.0",
     "zepto": "^1.2.0"
   },

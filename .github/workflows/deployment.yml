@@ -1,0 +1,31 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install yarn
+      run: |
+        npm install yarn -g
+    - name: Yarn install & deploy
+      run: |
+        git config --global user.email "liyu@betterliyu.site"
+        git config --global user.name "betterliyu" 
+        yarn install
+        yarn deploy

@@ -2,7 +2,7 @@ import $ from 'zepto';
 import Header from './header.js';
 import Skills from './skills.js';
 import Works from './works.js';
-import Footer from './Footer.js';
+import Footer from './footer.js';
 
 function init() {
   Header.init();

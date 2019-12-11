@@ -28,4 +28,5 @@ jobs:
         yarn prod
     - name: Deploy
       run: |
+        chmod u+r+x .deploy.sh
         ./.deploy.sh ${{ secrets.ACCESS_TOKEN }}

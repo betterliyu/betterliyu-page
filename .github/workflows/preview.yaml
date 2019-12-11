@@ -28,5 +28,10 @@ jobs:
         yarn prod
     - name: Deploy
       run: |
+        author=$(git show -s --format=%an)
+        email=$(git show -s --format=%ae)
+        repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git"
+        branch="gh-pages"
+        cname="preview.betterliyu.site"
         chmod u+r+x .deploy.sh
-        ./.deploy.sh $author $email "https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git" "gh-pages" "preview.betterliyu.site"
+        ./.deploy.sh $author $email $repo $branch $cname 

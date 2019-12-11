@@ -1,8 +1,7 @@
 import './style.css';
 import './scss/main.scss';
 import Start from './scripts/index.js';
-
-window.onload = function () {
+.onload = function () {
   // import(/* webpackChunkName: "lodash" */ 'lodash').then(exports => {
   //   exports.cloneDeep({});
   // });

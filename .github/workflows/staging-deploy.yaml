@@ -1,4 +1,4 @@
-name: Preview
+name: Staging
 
 on:
   push:
@@ -32,6 +32,6 @@ jobs:
         email=liyu@betterliyu.site
         repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git"
         branch="gh-pages"
-        cname="preview.betterliyu.site"
+        cname="staging.betterliyu.site"
         chmod u+r+x .deploy.sh
         ./.deploy.sh $author $email $repo $branch $cname 

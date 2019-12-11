@@ -1,4 +1,4 @@
-name: Deployment
+name: PR Build
 
 on:
   pull_request:
@@ -25,12 +25,3 @@ jobs:
           npm install yarn -g
           yarn install
           yarn prod
-      - name: Deploy
-        run: |
-          author=betterliyu
-          email=liyu@betterliyu.site
-          repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git"
-          branch="master"
-          cname="www.betterliyu.site"
-          chmod u+r+x .deploy.sh
-          ./.deploy.sh $author $email $repo $branch $cname 

@@ -7,17 +7,18 @@ remote_branch="$4"
 cname="$5"
 git config --local user.email "$email"
 git config --local user.name "$author" 
-mkdir ./publish 
-cd ./publish
+mkdir ./.publish 
+cd ./.publish
 git init 
 git remote add origin $remote_url
 git fetch origin
 git checkout -b master origin/$remote_branch
 cd ..
-find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
-echo "copy dist to publish..." 
-cp -r ./dist/. ./publish
-cd ./publish
+find ./.publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
+echo "copy dist to .publish..." 
+cp -r ./dist/. ./.publish
+cd ./.publish
+echo "create CNAME..." 
 rm -f CNAME
 echo "$5" > CNAME 
 git status

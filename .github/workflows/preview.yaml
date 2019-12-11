@@ -32,6 +32,6 @@ jobs:
         author=$(git show -s --format=%an)
         echo $author
         email=$(git show -s --format=%ae)
-        echo $author
+        echo $email
         chmod u+r+x .deploy.sh
         ./.deploy.sh $author $email "https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git" "gh-pages" "preview.betterliyu.site"

@@ -15,34 +15,17 @@ jobs:
         node-version: [10.x]
 
     steps:
+    - name: Checkout
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install yarn
-      run: |
-        npm install yarn -g
     - name: Build
       run: |
+        npm install yarn -g
         yarn install
         yarn prod
     - name: Deploy
       run: |
-        git config --global user.email "liyu@betterliyu.site"
-        git config --global user.name "betterliyu" 
-        mkdir ./publish 
-        cd ./publish
-        git init 
-        git remote add origin https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git
-        git fetch origin
-        git checkout -b master origin/master
-        cd ..
-        find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
-        echo "Copy dist to publish..." 
-        cp -r ./dist/. ./publish
-        cd ./publish
-        git add .
-        git commit -m "Deploy"
-        git push origin master -f
-        
+        ./.deploy.sh ${{ secrets.ACCESS_TOKEN }}

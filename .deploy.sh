@@ -13,7 +13,8 @@ echo "copy dist to publish..."
 cp -r ./dist/. ./publish
 cd ./publish
 git status
-if [ -z "$(git status --porcelain)" ] then
+if [ -z "$(git status --porcelain)" ] 
+then
     echo "nothing to update."
 else
     git add .

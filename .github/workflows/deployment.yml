@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v1
+      uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -28,4 +28,5 @@ jobs:
         yarn prod
     - name: Deploy
       run: |
+        chmod u+r+x .deploy.sh
         ./.deploy.sh ${{ secrets.ACCESS_TOKEN }}

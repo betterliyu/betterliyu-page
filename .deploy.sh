@@ -4,6 +4,7 @@ author="$1"
 email="$2"
 remote_url="$3"
 remote_branch="$4"
+cname="$5"
 git config --local user.email "$email"
 git config --local user.name "$author" 
 mkdir ./publish 
@@ -17,6 +18,8 @@ find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
 echo "copy dist to publish..." 
 cp -r ./dist/. ./publish
 cd ./publish
+rm -f CNAME
+echo "$5" > CNAME 
 git status
 if [ -z "$(git status --porcelain)" ] 
 then

@@ -1,9 +1,9 @@
-name: Deployment
+name: Preview
 
 on:
-  pull_request:
+  push:
     branches:
-      - release
+      - master
 
 jobs:
   build:
@@ -34,4 +34,4 @@ jobs:
         email=$(git show -s --format=%ae)
         echo $author
         chmod u+r+x .deploy.sh
-        ./.deploy.sh $author $email "https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git" "master" "www.betterliyu.site"
+        ./.deploy.sh $author $email "https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git" "gh-pages" "preview.betterliyu.site"

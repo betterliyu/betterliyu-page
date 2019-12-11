@@ -28,5 +28,10 @@ jobs:
         yarn prod
     - name: Deploy
       run: |
+        git config -l
+        author=$(git show -s --format=%an)
+        echo $author
+        email=$(git show -s --format=%ae)
+        echo $author
         chmod u+r+x .deploy.sh
-        ./.deploy.sh ${{ secrets.ACCESS_TOKEN }}
+        ./.deploy.sh $author $email "https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git" "master"

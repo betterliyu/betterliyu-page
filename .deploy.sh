@@ -1,12 +1,17 @@
 #!/bin/bash 
-git config --global user.email "liyu@betterliyu.site"
-git config --global user.name "betterliyu" 
+# ./.deploy.sh remote_url remote_branch
+author="$1"
+email="$2"
+remote_url="$3"
+remote_branch="$4"
+git config --local user.email "$email"
+git config --local user.name "$author" 
 mkdir ./publish 
 cd ./publish
 git init 
-git remote add origin https://betterliyu:$1@github.com/betterliyu/betterliyu.github.io.git
+git remote add origin $remote_url
 git fetch origin
-git checkout -b master origin/master
+git checkout -b master origin/$remote_branch
 cd ..
 find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
 echo "copy dist to publish..." 
@@ -19,6 +24,6 @@ then
 else
     git add .
     git commit -m "Update `date -u +'%Y-%m-%dT%H:%M:%S.%3NZ'`" -a
-    git push origin master -f
+    git push origin $remote_branch -f
 fi
 exit 0

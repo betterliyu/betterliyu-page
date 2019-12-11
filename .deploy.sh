@@ -5,8 +5,13 @@ email="$2"
 remote_url="$3"
 remote_branch="$4"
 cname="$5"
-git config --local user.email "$email"
-git config --local user.name "$author" 
+echo "author: $author"
+echo "email: $email"
+echo "dest repo: $remote_url"
+echo "dest branch: $remote_branch"
+echo "site: $cname"
+git config --global user.email $email
+git config --global user.name $author
 mkdir ./.publish 
 cd ./.publish
 git init 
@@ -14,8 +19,9 @@ git remote add origin $remote_url
 git fetch origin
 git checkout -b master origin/$remote_branch
 cd ..
+echo "clear publish folder..."
 find ./.publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
-echo "copy dist to .publish..." 
+echo "copy dist to publish..." 
 cp -r ./dist/. ./.publish
 cd ./.publish
 echo "create CNAME..." 

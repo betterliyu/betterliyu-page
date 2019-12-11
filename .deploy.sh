@@ -17,7 +17,7 @@ cd ./.publish
 git init 
 git remote add origin $remote_url
 git fetch origin
-git checkout -b master origin/$remote_branch
+git checkout -b $remote_branch origin/$remote_branch
 cd ..
 echo "clear publish folder..."
 find ./.publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf

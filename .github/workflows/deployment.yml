@@ -27,8 +27,8 @@ jobs:
           yarn prod
       - name: Deploy
         run: |
-          author=$(git show -s --format=%an)
-          email=$(git show -s --format=%ae)
+          author=betterliyu
+          email=liyu@betterliyu.site
           repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git"
           branch="master"
           cname="www.betterliyu.site"

@@ -1,0 +1,37 @@
+name: Preview
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Build
+      run: |
+        npm install yarn -g
+        yarn install
+        yarn prod
+    - name: Deploy
+      run: |
+        author=betterliyu
+        email=liyu@betterliyu.site
+        repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git"
+        branch="gh-pages"
+        cname="preview.betterliyu.site"
+        chmod u+r+x .deploy.sh
+        ./.deploy.sh $author $email $repo $branch $cname 

@@ -1,13 +1,12 @@
 name: Deployment
 
 on:
-  push:
+  pull_request:
     branches:
       - release
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,17 +14,23 @@ jobs:
         node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install yarn
-      run: |
-        npm install yarn -g
-    - name: Yarn install & deploy
-      run: |
-        git config --global user.email "liyu@betterliyu.site"
-        git config --global user.name "betterliyu" 
-        yarn install
-        yarn deploy
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Build
+        run: |
+          npm install yarn -g
+          yarn install
+          yarn prod
+      - name: Deploy
+        run: |
+          author=betterliyu
+          email=liyu@betterliyu.site
+          repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu.github.io.git"
+          branch="master"
+          cname="www.betterliyu.site"
+          chmod u+r+x .deploy.sh
+          ./.deploy.sh $author $email $repo $branch $cname 

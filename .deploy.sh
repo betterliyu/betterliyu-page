@@ -12,7 +12,8 @@ find ./publish/ | grep -v .git | grep -v . | grep -v .. | xargs rm -rf
 echo "copy dist to publish..." 
 cp -r ./dist/. ./publish
 cd ./publish
-if [ -z "$(git status --porcelain)" ] then
+if [ -z "$(git status --porcelain)" ] 
+then
     echo "nothing to update."
 else
     git add .

@@ -2,3 +2,5 @@
 # https://github.com/jekyll/github-metadata/issues/146
 name: true
 title: false
+
+theme: jekyll-theme-primer

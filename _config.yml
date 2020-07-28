@@ -1,2 +1,4 @@
+# remove the default h1 in GitHub Page
+# https://github.com/jekyll/github-metadata/issues/146
 name: true
 title: false

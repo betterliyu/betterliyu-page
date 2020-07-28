@@ -86,9 +86,9 @@ module.exports = {
         name: '[name].[hash].[ext]',
         outputPath: 'fonts/'
       }
-    // }, {
-    //   test: /\.(html|htm)$/,
-    //   loader: 'html-loader'
+      // }, {
+      //   test: /\.(html|htm)$/,
+      //   loader: 'html-loader'
     }]
   },
   plugins: [
@@ -117,7 +117,8 @@ module.exports = {
       { from: path.resolve(__dirname, '../db.json'), to: '../dist' },
       { from: path.resolve(__dirname, '../robots.txt'), to: '../dist' },
       { from: path.resolve(__dirname, '../sitemap.xml'), to: '../dist' },
-      { from: path.resolve(__dirname, '../desktop-icon.png'), to: '../dist' }
+      { from: path.resolve(__dirname, '../desktop-icon.png'), to: '../dist' },
+      { from: path.resolve(__dirname, '../bookmark.md'), to: '../dist' }
     ]),
     new StyleLintPlugin({
       syntax: 'scss'

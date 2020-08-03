@@ -10,6 +10,8 @@
 
 - [PTA ](https://pintia.cn/problem-sets?tab=0)
 - [LeetCode](https://leetcode.com/)
+- [labuladong/funcking-algorithm](https://github.com/labuladong/fucking-algorithm)
+- [算法 第4版](https://algs4.cs.princeton.edu/home/)
 
 ### JavaScript
 
@@ -34,6 +36,10 @@
 - [React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
 - [Creating a React App… From Scratch.](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
 
+### 前端工程化
+
+- [使用ESLint+Prettier来统一前端代码风格](https://juejin.im/post/6844903621805473800)
+
 ### SEO
 
 - [Google Search Console](https://search.google.com/search-console?resource_id=https%3A%2F%2Fblog.betterliyu.site%2F)
@@ -50,6 +56,13 @@
 - [jwt decode](https://jwt.io/)
 - [SVG 在线编辑器  菜鸟工具](https://c.runoob.com/more/svgeditor/)
 - [C 语言开发环境](https://clin.icourse163.org/)
+
+### 免费开源图标库
+
+- [FLAT ICON DESIGN](http://flat-icon-design.com/)
+- [Free icons by first-class designers](https://iconstore.co/)
+- [Easyicon](https://www.easyicon.net/iconsearch/iconset:Education-icons/?s=addtime_DESC)
+- [linea](https://linea.io/)
 
 ### 面试相关
 

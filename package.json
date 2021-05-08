@@ -65,7 +65,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "core-js": "3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.0",
     "zepto": "^1.2.0"
   },

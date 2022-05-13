@@ -32,6 +32,6 @@ jobs:
         email=liyu@betterliyu.site
         repo="https://betterliyu:${{ secrets.ACCESS_TOKEN }}@github.com/betterliyu/betterliyu-page.git"
         branch="gh-pages"
-        cname="staging.betterliyu.site"
+        cname="staging.edenliyu.top"
         chmod u+r+x .deploy.sh
         ./.deploy.sh $author $email $repo $branch $cname 
